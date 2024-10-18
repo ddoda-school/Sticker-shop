@@ -52,7 +52,7 @@ function closeFilters() {
 <template>
   <div class="fixed top-0 bottom-0 left-0 w-[100%] h-[100%] bg-black/50 lg:hidden z-10" v-if="showBackgroundTin"
     @click="closeFilters" />
-  <button class="lg:hidden fixed bottom-4 right-[45%] bg-black px-6 py-4 rounded-full text-white z-20"
+  <button class="lg:hidden fixed bottom-4 right-[50%] translate-x-[50%] bg-black px-6 py-4 rounded-full text-white z-20"
     @click="openFilters" v-if="!showFilters">
     Show filters
   </button>
@@ -116,7 +116,7 @@ function closeFilters() {
       <TransitionGroup name="type">
         <div class="py-[2px] flex items-center" v-for="filter in types" v-if="showTypes" :key="filter">
           <input type="checkbox" :value="filter" v-model="appliedFilters.filters.types" :id="filter"
-            class="hover:cursor-pointer custom-check" />
+            class="hover:cursor-pointer custom-check" /> <!--For each category I've binded it to radio input and this is how I add them to the filters -->
           <label class="pl-[5px]">{{ filter }} </label>
         </div>
       </TransitionGroup>
